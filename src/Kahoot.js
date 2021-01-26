@@ -8,7 +8,9 @@ import Questiondisplay_layout from './components/Game/Questiondisplay_layout';
 import {  BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
 
 function Kahoot() {
-  return(<GamePin />);
+  return(
+    <GamePin />
+  );
 }
 export default Kahoot;
 

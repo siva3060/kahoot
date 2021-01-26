@@ -1,15 +1,24 @@
 import {useState  } from 'react';
 import axios from 'axios';
-
-const url = "http://localhost:700/api/user/gamePin"
-
-export function Get() {
-   const [result, setresult ] = useState(0);
-
-//'https://jsonplaceholder.typicode.com/posts'
+export function Get(url) {
+   let result;
+   
+   console.log(url)
    axios.get(url)
          .then(response => { 
-            setresult(response.data[0]['userId']); 
+            console.log(response)
+            //setresult(response.data[0]['userId']); 
          });
          return result;  
+}
+
+
+export function Post(data,url) {
+   const [result, setresult ] = useState(0);
+
+   console.log(data)
+   // Simple POST request with a JSON body using axios
+   const send_data = { data: data };
+   axios.post(url, send_data)
+       .then(response => setresult(response) );
 }
