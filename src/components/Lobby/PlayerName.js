@@ -1,18 +1,16 @@
 import React from 'react';
 
-function PlayerName(params) {
+function PlayerName(props) {
 
     return(
         
         <div className='container'>
-        <div className='minicontainer'>
-            <h1>PlayerName</h1>   
-             <input className='inputpin' type='text' placeholder='Enter Nick Name' />
-             <button type='submit'>Join</button>
-             </div>
-
-    </div>
+            <div className='minicontainer'>
+                <h1>PlayerName</h1>   
+                <input className='inputpin' type='text' placeholder='Enter Nick Name' />
+                <button onClick={props.fun1(true)}>Join</button>
+            </div>
+        </div>
     )
 }
-
 export default PlayerName;
