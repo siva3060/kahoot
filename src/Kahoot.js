@@ -1,18 +1,15 @@
-import React from 'react';
-import AdminLayout from './components/Admin/adminlayout';
-import GamePin from './components/Home/GamePin';
-import GamePinDisplay from './components/Home/GamePinDisplay';
-import Newquestion_layout from './components/Game/Newquestion_layout';
+import React, { useState } from 'react';
+import GamePin from './components/Game/GamePin';
 import Lobby from './components/Lobby/Lobby';
-import Questiondisplay_layout from './components/Game/Questiondisplay_layout'; 
 import {  BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
 
 function Kahoot() {
+    const [validPin,setValidPin]  = useState(false);
+    const joinLobby= () =>{ setValidPin(true) }
   return (
 <div>
+{(validPin)? <Lobby />:<GamePin fun1={joinLobby} />}
 
-
-<AdminLayout />
 
 {/*
     <Router>
