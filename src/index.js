@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Kahoot from './Kahoot';
 import * as serviceWorker from './serviceWorker';
+import * as resources from '../src/Configuration/resources.json';
 
 ReactDOM.render(
   <React.StrictMode>

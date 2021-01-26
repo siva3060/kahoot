@@ -11,12 +11,18 @@ import Newquestion_layout from '../src/components/Admin/Newquestion_layout'
 import {  BrowserRouter as Router, Routes, Switch,  Route,  Link } from "react-router-dom";
 
 function Kahoot() {
+
     const [validPin,setValidPin]  = useState(false);
     const joinLobby= () =>{ setValidPin(true) }
+
+    console.log("Current Pin is valid "+validPin)
     return (
-            <div>{(validPin)? <Lobby />:<GamePin fun1={joinLobby} />}
+      <div>
+        {(validPin) ? <Lobby /> : <GamePin {...joinLobby} />}
+      </div>
         
     
+	    /*
     <Router>
     <div>
         <nav>
@@ -59,6 +65,7 @@ function Kahoot() {
     
     </div>
     </Router>
+	    */
 )
 }
 export default Kahoot;
