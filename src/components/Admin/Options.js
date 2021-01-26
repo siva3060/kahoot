@@ -33,6 +33,18 @@ function Options(props) {
                         </Paper>
                     </Grid>
                 </Grid>
+
+
+                <Grid container spacing={12}> 
+                   
+                    <Grid item xs>
+                        <Paper className='LobbyGrid'>
+                            <div><p className='opt1' onClick={props.fun1}>Submit</p></div>  
+                        </Paper>
+                    </Grid>
+                </Grid>
+
+
                     
                 </div>
         </div>
