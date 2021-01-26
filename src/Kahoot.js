@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import GamePin  from './components/Game/GamePin';
 import GamePinDisplay from './components/Game/GamePinDisplay';
@@ -17,6 +18,26 @@ function Kahoot() {
 
     console.log("Current Pin is valid "+validPin)
     return (
+=======
+import React from 'react';
+import Admin from './components/Admin/Admin';
+import GamePin from './components/Home/GamePin';
+import GamePinDisplay from './components/Home/GamePinDisplay';
+import Newquestion_layout from './components/Game/Newquestion_layout';
+import Lobby from './components/Lobby/Lobby';
+import Questiondisplay_layout from './components/Game/Questiondisplay_layout'; 
+import {  BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
+
+function Kahoot() {
+  return (
+<div>
+
+
+<Admin />
+
+{
+    <Router>
+>>>>>>> 313228a80689be2e4777464a3132d0ddfc4b8cff
       <div>
         {(validPin) ? <Lobby /> : <GamePin {...joinLobby} />}
       </div>
@@ -60,9 +81,18 @@ function Kahoot() {
           </Route>
           <Route path="/New_Question" >
             <Newquestion_layout />
+<<<<<<< HEAD
             </Route>
        </Switch>     
     
+=======
+          </Route>
+          
+          
+        </Switch>
+      </div>
+    </Router> }
+>>>>>>> 313228a80689be2e4777464a3132d0ddfc4b8cff
     </div>
     </Router>
 	    */
