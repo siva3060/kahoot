@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import GamePin from './components/Game/GamePin';
+import React from 'react';
+import Admin from './components/Admin/Admin';
+import GamePin from './components/Home/GamePin';
+import GamePinDisplay from './components/Home/GamePinDisplay';
+import Newquestion_layout from './components/Game/Newquestion_layout';
 import Lobby from './components/Lobby/Lobby';
+import Questiondisplay_layout from './components/Game/Questiondisplay_layout'; 
 import {  BrowserRouter as Router,  Switch,  Route,  Link } from "react-router-dom";
 
 function Kahoot() {
-    const [validPin,setValidPin]  = useState(false);
-    const joinLobby= () =>{ setValidPin(true) }
   return (
 <div>
-{(validPin)? <Lobby />:<GamePin fun1={joinLobby} />}
 
 
-{/*
+<Admin />
+
+{
     <Router>
       <div>
         <nav>
@@ -55,7 +58,7 @@ function Kahoot() {
           
         </Switch>
       </div>
-    </Router> */}
+    </Router> }
     </div>
   )
 }
