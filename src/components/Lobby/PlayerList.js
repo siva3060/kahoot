@@ -7,7 +7,7 @@ function PlayerList()
 {
     return(
         <div className='container'>
-            fgbfgbb
+            
         <div className='lobbycontainer'>
             <h1>Lobby</h1>                 
         <Grid container spacing={3}>

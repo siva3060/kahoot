@@ -8,7 +8,7 @@ function PlayerName(props) {
             <div className='minicontainer'>
                 <h1>PlayerName</h1>   
                 <input className='inputpin' type='text' placeholder='Enter Nick Name' />
-                <button onClick={props.fun1(true)}>Join</button>
+                <button onClick={props.fun1}>Join</button>
             </div>
         </div>
     )

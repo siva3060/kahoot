@@ -8,7 +8,7 @@ function Lobby(params) {
     return(
         <div>
         <PlayerList />
-        <PlayerName fun1={joinPlayer()} />
+        <PlayerName fun1={joinPlayer} />
      </div>
     )
 }
