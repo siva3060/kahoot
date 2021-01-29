@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Axios from 'axios';
 
 function Copyright() {
   return (
@@ -47,6 +48,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
+
+  const [userName,setUserName] = useState("")
+  const [password,setPassword] = useState("")
+  
+  const validateLogin = async ()=>{
+    const url =  userLogin +"?userId="+userName+"&?password="+password
+    const responseStatus =  await sendGetRequestTo(url)
+    console.log("response  stats is "+responseStatus)
+    if(responseStatus === 200){
+        console.log(" pin is valid and sending true")
+        return true;
+   }
+   return false;
+}
+
   const classes = useStyles();
 
   return (
@@ -70,6 +86,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(event)=>setUserName(event.target.value)}
           />
           <TextField
             variant="outlined"
@@ -80,6 +97,7 @@ export default function Login() {
             label="Password"
             type="password"
             id="password"
+            onChange={(event)=>setPassword(event.target.value)}
             autoComplete="current-password"
           />
           <FormControlLabel
@@ -91,6 +109,7 @@ export default function Login() {
             fullWidth
             variant="contained"
             color="primary"
+            onClick={()=>validateLogin()}
             className={classes.submit}
           >
             Sign In

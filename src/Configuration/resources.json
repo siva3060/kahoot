@@ -3,8 +3,8 @@
      "joinGameBaseUrl" : "http://localhost:8080/game/join/",
      "createGamePin" : "http://localhost:8080/game/create?userId=",
      "savePlayState" : "http://localhost:8080/game/save/playstat",
-     "playAggstat" : "http://localhost:8080/game/game/gameStat",
-     "playAggstat" : "http://localhost:8080/game/game/igameStat",
+     "gameStat" : "http://localhost:8080/game/game/gameStat",
+     "playAggstat" : "http://localhost:8080/game/gameAggStat",
      "userlogin" : "http://localhost:8080/user/login/",
      "playOneGame" : "http://localhost:8080/play/test/",
      "playSampleGame" : "http://localhost:8080/play/sample/"
