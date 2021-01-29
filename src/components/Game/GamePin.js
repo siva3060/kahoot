@@ -1,28 +1,31 @@
 import React,{useState} from 'react';
 import  {sendGetRequestTo} from '../../utility/httplibary';
+import {joinGameBaseUrl} from '../../Configuration/resources.json';
 
 
-function GamePin({joinGame}) {
+function GamePin({handleJoin}) {
 
  const [gamePin,setGamePin] = useState(0); 
- const validatePin = ()=>{
 
-     const url =  resources.joinGameBaseUrl +gamePin+'/'+'123';
-     const responseStatus = sendGetRequestTo(url)
-     const result = false
-     if(responseStatus.status === 200){
-         result = true;
+ const validatePin = async ()=>{
+     const url =  joinGameBaseUrl +gamePin+'/'+'123';
+     const responseStatus =  await sendGetRequestTo(url)
+     console.log("response  stats is "+responseStatus)
+     if(responseStatus === 200){
+         console.log(" pin is valid and sending true")
+         return true;
     }
-    return result;
+    return false;
  }
 
  // refactor with useCallBackHook resources
- const canJoinGame = ()=>{
-        if(validatePin()){
-        console.log("The game pin is valid "+gamePin+" user is joining the game")
-            joinGame();
-        }
-        console.log("The game pin is invalid not able to join game")
+ const canJoinGame = async ()=>{
+     if (await validatePin()) {
+         console.log("The game pin is valid " + gamePin + " user is joining the game")
+         handleJoin();
+     }
+     //console.log("The game pin is invalid not able to join game")
+
  }
 
     return (

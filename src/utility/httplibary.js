@@ -1,17 +1,15 @@
 import {useState  } from 'react';
 import axios from 'axios';
 
-export function sendGetRequestTo(url) {
-   let result = {'status' : false};
-   
-   console.log(url)
-   axios.get(url)
-      .then(response => {
-         console.log(response)
-         //setresult(response.data[0]['userId']); 
-      })
-      .catch(error => console.log(error));
-   return result;
+export async function sendGetRequestTo(url) {
+   let status = 404
+   await axios.get(url)
+        .then( res => {
+           console.log(res)
+           status = res.status
+        })
+   console.log("the response status sending is "+status)
+   return status;
 }
 
 

@@ -3,12 +3,11 @@ import PlayerName from './PlayerName';
 import PlayerList from './PlayerList';
 import Questiondisplay_layout from '../Admin/Questiondisplay_layout';
 
-function Lobby(params) {
+function Lobby() {
     const [playerName,setPlayername]  = useState(false);
     const joinPlayer= () =>{ setPlayername(true) }
     return(
         <div>
-            {playerName}
            {(playerName) ?  <Questiondisplay_layout /> : <div> <PlayerList /> <PlayerName fun1={joinPlayer} /> </div>}
         </div>
     )

@@ -1,3 +1,4 @@
+/*
 import React,{useState} from 'react';
 import Question from './Question';
 import Options from './Options';
@@ -16,3 +17,4 @@ function Questiondisplay_layout(params) {
     )
 }
 export default Questiondisplay_layout; 
+*/

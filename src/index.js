@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Kahoot from './Kahoot';
+import Login from './components/Admin/Login';
+import GameList from './components/Admin/GameList'
 import * as serviceWorker from './serviceWorker';
 import * as resources from '../src/Configuration/resources.json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Kahoot />
+    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 );

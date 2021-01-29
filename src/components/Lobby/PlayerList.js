@@ -1,47 +1,33 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import FaceIcon from '@material-ui/icons/Face';
+import PlayerName from './PlayerName';
+import axios from 'axios';
 
-function PlayerList()
+function PlayerList({gamePin})
 {
+
+    const [playerList, setPlayerList] = useState("");
+
+    useEffect( ()=>{
+        axios.get("http://localhost:8080/game/lobby/"+gamePin)
+             .then( response =>{
+                 setPlayerList(response.data)
+             })
+    })
+
     return(
         <div className='container'>
-            
-        <div className='lobbycontainer'>
-            <h1>Lobby</h1>                 
-        <Grid container spacing={3}>
-        <Grid item xs>
-            <Paper className='LobbyGrid'>
-                <div> <FaceIcon />
-                    <br /><p>Name</p>
-                </div>
-            </Paper>
-        </Grid>
-        <Grid item xs>
-            <Paper className='LobbyGrid'>
-            <div> <FaceIcon />
-                    <br /><p>Name</p>
-                </div>    
-            </Paper>
-        </Grid>
-        <Grid item xs>
-            <Paper className='LobbyGrid'>
-            <div> <FaceIcon />
-                    <br /><p>Name</p>
-                </div>    
-            </Paper>
-        </Grid>
-        <Grid item xs>
-            <Paper className='LobbyGrid'>
-            <div> <FaceIcon />
-                    <br /><p>Name</p>
-                </div>    
-            </Paper>
-        </Grid>
-      </Grid>
-             </div>
-             </div>
+            <div className='lobbycontainer'>
+                <h1>Lobby</h1>
+                <Grid container spacing={3}>
+                    {playerList.map(player=>{
+                       {/* <Player {PlayerName,PlayerId} />*/}
+                    })}
+                </Grid>
+            </div>
+        </div>
         )
 }
 export default PlayerList;
