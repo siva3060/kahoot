@@ -6,10 +6,13 @@ import Login from './components/Admin/Login';
 import GameList from './components/Admin/GameList'
 import * as serviceWorker from './serviceWorker';
 import * as resources from '../src/Configuration/resources.json';
+import Lobby from './components/Lobby/Lobby';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Lobby />
   </React.StrictMode>,
   document.getElementById('root')
 );
