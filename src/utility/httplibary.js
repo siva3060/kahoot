@@ -1,26 +1,30 @@
 import {useState  } from 'react';
 import axios from 'axios';
 
+
 export async function sendGetRequestTo(url) {
    let status = 404
+   let data = ""
    await axios.get(url)
         .then( res => {
            console.log(res)
            status = res.status
+           data = res.data;
         })
-   console.log("the response status sending is "+status)
-   return status;
+   return [status,data];
 }
 
 
-export function PostRequestTo(data,url) {
-   const [result, setresult ] = useState(0);
+export function PostRequestTo(url,requestData) {
+   let status = 404
+   let data = ""
+   await axios.get(url)
+        .then( res => {
+           status = res.status
+           data = res.data;
+        })
+   return [status,data];
 
-   console.log(data)
-   // Simple POST request with a JSON body using axios
-   const send_data = { data: data };
-   axios.post(url, send_data)
-       .then(response => setresult(response) );
 }
 
 // Defensive code for network error or network slow 
