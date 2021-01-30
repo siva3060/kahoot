@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Kahoot from './Kahoot';
-import Login from './components/Admin/Login';
-import GameList from './components/Admin/GameList'
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as resources from '../src/Configuration/resources.json';
 import Lobby from './components/Lobby/Lobby';

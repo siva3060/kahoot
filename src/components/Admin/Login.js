@@ -9,7 +9,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Axios from 'axios';
+import {userLogin} from '../../Configuration/resources.json'
+import {sendGetRequestTo} from '../../utility/httplibary'
 
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -58,7 +59,7 @@ export default function Login() {
     const url =  userLogin +"?userId="+userName+"&?password="+password
     const responseStatus =  await sendGetRequestTo(url)
     console.log("response  stats is "+responseStatus)
-    if(responseStatus === 200){
+    if(responseStatus[0] === 200){
         console.log(" pin is valid and sending true")
         return true;
    }

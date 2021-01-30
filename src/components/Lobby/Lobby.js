@@ -60,7 +60,12 @@ function TabPanel(props) {
 
 
 const useStyles = makeStyles((theme) => ({
-
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: 'flex',
+    height: 224,
+  },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -126,17 +131,10 @@ export default function Lobby() {
         </Toolbar>
       </AppBar>
 
-      {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography variant="h3" align="center" color="textSecondary" component="p">
-         Lobby
-        </Typography>
-      </Container>
-      {/* End hero unit */}
-      <Container maxWidth="md" component="main">
-          
+ 
 
 
+      <div className={classes.root}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -174,10 +172,9 @@ export default function Lobby() {
       <TabPanel value={value} index={6}>
         Item Seven
       </TabPanel>
-
-
-
-
+    </div>
+      <Container maxWidth="md" component="main">
+          
 
 
 
@@ -207,6 +204,7 @@ export default function Lobby() {
         </Box>
       </Container>
       {/* End footer */}
+      </Container>
     </React.Fragment>
   );
 }
