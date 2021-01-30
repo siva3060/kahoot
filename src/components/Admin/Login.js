@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -8,6 +9,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Axios from 'axios';
 
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -47,7 +49,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function Login() {
+
+  const [userName,setUserName] = useState("")
+  const [password,setPassword] = useState("")
+  
+  const validateLogin = async ()=>{
+    const url =  userLogin +"?userId="+userName+"&?password="+password
+    const responseStatus =  await sendGetRequestTo(url)
+    console.log("response  stats is "+responseStatus)
+    if(responseStatus === 200){
+        console.log(" pin is valid and sending true")
+        return true;
+   }
+   return false;
+}
+
   const classes = useStyles();
   const notify = () => toast("Wow so easy!");
 
@@ -69,6 +86,7 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(event)=>setUserName(event.target.value)}
           />
           <TextField
             variant="outlined"
@@ -79,6 +97,7 @@ export default function SignIn() {
             label="Password"
             type="password"
             id="password"
+            onChange={(event)=>setPassword(event.target.value)}
             autoComplete="current-password"
           />
           <Button
@@ -86,6 +105,7 @@ export default function SignIn() {
             fullWidth
             variant="contained"
             color="primary"
+            onClick={()=>validateLogin()}
             className={classes.submit}
             onClick={notify}
           >
