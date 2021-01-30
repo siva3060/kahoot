@@ -1,11 +1,11 @@
 
  {
-     "joinGameBaseUrl" : "http://localhost:8080/game/join/",
-     "createGamePin" : "http://localhost:8080/game/create?userId=",
-     "savePlayState" : "http://localhost:8080/game/save/playstat",
-     "gameStat" : "http://localhost:8080/game/game/gameStat",
-     "playAggstat" : "http://localhost:8080/game/gameAggStat",
-     "userlogin" : "http://localhost:8080/user/login/",
-     "playOneGame" : "http://localhost:8080/play/test/",
-     "playSampleGame" : "http://localhost:8080/play/sample/"
+     "joinGameBaseUrl" : "http://192.168.29.174:8080/game/join/",
+     "createGamePin" : "http://192.168.29.174:8080/game/create?userId=",
+     "savePlayState" : "http://192.168.29.174:8080/game/save/playstat",
+     "gameStat" : "http://192.168.29.174:8080/game/game/gameStat",
+     "playAggstat" : "http://192.168.29.174:8080/game/gameAggStat",
+     "userLogin" : "http://192.168.29.174:8080/user/login/",
+     "playOneGame" : "http://192.168.29.174:8080/play/test/",
+     "playSampleGame" : "http://192.168.29.174:8080/play/sample/"
  }

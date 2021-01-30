@@ -3,7 +3,7 @@ import PlayerName from './PlayerName';
 import PlayerList from './PlayerList';
 import Questiondisplay_layout from '../Admin/Questiondisplay_layout';
 
-function Lobby() {
+function Lobby({setPinValid}) {
     const [playerName,setPlayername]  = useState(false);
     const joinPlayer= () =>{ setPlayername(true) }
     return(

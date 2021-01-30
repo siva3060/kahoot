@@ -22,9 +22,9 @@ function PlayerList({gamePin})
             <div className='lobbycontainer'>
                 <h1>Lobby</h1>
                 <Grid container spacing={3}>
-                    {playerList.map(player=>{
-                        <Player {... PlayerName,PlayerId} />
-                    })}
+                    {playerList.map(player=>(
+                        <h3>player.nickName</h3>
+                    ))}
                 </Grid>
             </div>
         </div>

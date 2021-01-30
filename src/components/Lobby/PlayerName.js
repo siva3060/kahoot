@@ -1,10 +1,16 @@
 import React from 'react';
-import {joinBaseUrl} from '../../Configuration/resources.json'
+import {joinGameBaseUrl} from '../../Configuration/resources.json'
+import {sendGetRequestTo} from '../../utility/httplibary'
+
+// Player enters his nickname and joins the lobby
+// Before : A valid game pin is found and entered 
+// After : A Nickname is enterd and can see his name in lobby
+            // waiting on the game admin to start the game 
 
 function NickName() {
 
     const joinLobby = async ()=>{
-        const url =   joinBaseUrl
+        const url =   joinGameBaseUrl
         const responseStatus =  await sendGetRequestTo(url)
         console.log("response  stats is "+responseStatus)
         if(responseStatus === 200){
